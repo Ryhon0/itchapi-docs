@@ -8,10 +8,17 @@ This quirk still exists for backwards compatibility reasons, it might not exist 
 See [itch.io#1301](https://github.com/itchio/itch.io/issues/1301) and [go-itchio@b3ae624](https://github.com/itchio/go-itchio/commit/b3ae62491ac725a8377b5a75ccb1d5005a1e7545)
 
 ## Glossary
+### Endpoints
+A base URL is the url that needs to be prepended to the method path, you can find it in the main page for the API you want to use, if not specified, use `https://itch.io`.  
+Parts of the URL in `{name}` format are URL parameters, they are replced with the value of the parameter, including the `{}`, e.g. `/games/{gameId}/` => `/games/5318008/`.  
+All other parameters are query parameters, following HTTP standards.  
+The HTTP method for requests is defined in the endpoint page header.  
+
 ### Types
 If a class extends another class, it has all the properties of the parent, plus ones defined bellow.  
 Arrays types have `[]` appended to the base type, e.g. `string[]` is an array of `string`.  
 Numeric types have their bitness appended to them, e.g. `int32` is a 32 bit integer.  
+DateTime represents a struct containing a date and time.  
 
 ## Base response
 Most APIs here will return the following JSON object on a non 2xx error code: 
