@@ -102,3 +102,5 @@
       href: Other/tags.md
     - name: /jam/{id}/results.json
     - name: /jam/{id}/entries.json
+- name: Notes
+  href: notes.md
