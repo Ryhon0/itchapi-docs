@@ -13,12 +13,21 @@
           href: V2/Profile/owned-keys.md
         - name: /profile/collections
           href: V2/Profile/collections.md
+
         - name: /profile/game-sessions
           href: V2/Profile/sessions.md
         - name: /profile/game-sessions/{sessionID}
           href: V2/Profile/session.md
+        # https://github.com/itchio/go-itchio/commit/48572a83f2608a14e94aea88363ca5e41c8ec78f
+        - name: /profile/game-sessions/{gameID}
+          href: V2/Profile/session.md
         - name: /profile/game-sessions/summaries/{gameID}
-          href: V2/Profile/session-summaries.md
+          href: V2/Profile/session-summary.md
+
+        # https://github.com/itchio/go-itchio/blob/6592014be10d25438c954cda8378bb93c1ca8e56/endpoints_interactions.go
+        - name: /games/{gameID}/interactions/sessions
+        - name: /games/{gameID}/interactions/sessions/{sessionID}
+
         - name: /credentials/subkey
           href: V2/Profile/subkey.md
     - name: Collections
