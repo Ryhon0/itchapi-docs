@@ -1,4 +1,4 @@
-# /games/{id}
+# GET /games/{id}
 
 ## Parameters
 ### {id}

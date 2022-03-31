@@ -1,4 +1,4 @@
-# /profile
+# GET /profile
 Returns your profile information.
 
 ## Returns

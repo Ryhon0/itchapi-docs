@@ -1,4 +1,4 @@
-# /profile/owned-keys
+# GET /profile/owned-keys
 
 ## Parameters
 ### page

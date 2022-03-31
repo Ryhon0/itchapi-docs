@@ -1,1 +1,1 @@
-# /credentials/subkey
+# GET /credentials/subkey

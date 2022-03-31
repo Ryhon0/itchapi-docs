@@ -1,4 +1,4 @@
-# /tags.json
+# GET /tags.json
 
 This API is called on the "Browse" section of itch when you click the "Select a tag..." combo box. It retuns the list of tags you can use when browsing games. This API does not require any authentication.  
 ![](/images/tags.png)

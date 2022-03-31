@@ -1,1 +1,2 @@
-# /profile/game-sessions/{sessionID}
+# POST /profile/game-sessions/{sessionID}
+

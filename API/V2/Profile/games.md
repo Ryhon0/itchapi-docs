@@ -1,4 +1,4 @@
-# /profile/games
+# GET /profile/games
 Returns a list of games you've created or are an admin of.  
 
 ## Returns
