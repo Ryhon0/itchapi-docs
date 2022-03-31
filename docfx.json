@@ -1,0 +1,37 @@
+{
+  "build": {
+    "content": [
+      {
+        "files": [
+          "API/**",
+          "toc.yml",
+          "*.md"
+        ],
+        "exclude": [
+          "_site/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ],
+        "exclude": [
+          "_site/**"
+        ]
+      }
+    ],
+    "dest": "_site",
+    "globalMetadata": {
+      "_appFooter": "© 2022 Ryhon",
+      "_enableSearch": "true"
+    },
+    "globalMetadataFiles": [],
+    "fileMetadataFiles": [],
+    "postProcessors": ["ExtractSearchIndex", "CustomMemberIndexer"],
+    "noLangKeyword": false,
+    "keepFileLink": false,
+    "cleanupCacheHistory": false
+  }
+}

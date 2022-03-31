@@ -1,0 +1,95 @@
+- name: Intro
+  href: index.md
+- name: JSON API V2
+  href: V2/index.md
+  items:
+    - name: Profile
+      items:
+        - name: /profile
+          href: V2/Profile/profile.md
+        - name: /profile/games
+          href: V2/Profile/games.md
+        - name: /profile/owned-keys
+          href: V2/Profile/owned-keys.md
+        - name: /profile/collections
+          href: V2/Profile/collections.md
+        - name: /profile/game-sessions
+          href: V2/Profile/sessions.md
+        - name: /profile/game-sessions/{sessionID}
+          href: V2/Profile/session.md
+        - name: /profile/game-sessions/summaries/{gameID}
+          href: V2/Profile/session-summaries.md
+        - name: /credentials/subkey
+          href: V2/Profile/subkey.md
+    - name: Collections
+      items:
+      - name: /collections/{id}
+      - name: /collections/{id}/collection-games
+    - name: Games
+      items:
+        - name: /games/{id}
+          href: V2/Games/game.md
+        - name: /games/{gameID}/download-sessions
+        - name: /games/{gameID}/uploads
+    - name: Downloads
+      items:
+        - name: /uploads/{id}
+        - name: /uploads/{id}/builds
+        - name: /uploads/{id}/download
+        - name: /uploads/{id}/scanned-archive
+        - name: /builds/{id}
+        - name: /builds/{id}/scanned-archive
+        - name: /builds/{id}/download/{type}/{subType}
+        - name: /builds/{current}/upgrade-paths/{target}
+    - name: Wharf
+      items:
+        - name: /wharf/status
+        - name: /wharf/channels
+        - name: /wharf/channels/{channel}
+        - name: /wharf/builds
+        - name: /wharf/builds/{buildID}/files
+        - name: /wharf/builds/{buildID}/files
+        - name: /wharf/builds/{buildID}/files/{fileID}
+        - name: /wharf/builds/{buildID}/files/{fileID}/download
+        - name: /wharf/builds/{buildID}/events
+        - name: /wharf/builds/{buildID}/failures
+        - name: /wharf/builds/{buildID}/failures/rediff
+        - name: /wharf/builds/{buildID}/events
+    - name: /login 
+      href: V2/login.md
+    - name: /totp/verify
+    - name: /search/games
+    - name: /search/users
+    - name: /users/{id}
+- name: JSON API V1
+  href: V1/index.md
+  items:
+    - name: /credentials/info
+    - name: /me
+    - name: /my-owned-keys
+    - name: /download-key/{key}/uploads
+    - name: /my-collections
+    - name: /my-games
+    - name: /my-games/graphs
+    - name: /game/{id}
+    - name: /game/{id}/purchases
+    - name: /game/{id}/download_keys
+    - name: /game/{id}/uploads
+    - name: /upload/{id}/download
+- name: OAuth
+  href: https://itch.io/docs/api/oauth
+- name: RSS API
+  href: RSS.md
+- name: Web API
+  href: Web/index.md
+  items:
+    - name: /game/popup/{id}
+    - name: /devlogs
+    - name: /my-feed
+- name: Other
+  href: Other/index.md
+  items:
+    - name: /tags.json
+      href: Other/tags.md
+    - name: /jam/{id}/results.json
+    - name: /jam/{id}/entries.json
