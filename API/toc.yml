@@ -67,6 +67,7 @@
     - name: /login 
       href: V2/login.md
     - name: /totp/verify
+      href: V2/totp.md
     - name: /search/games
     - name: /search/users
     - name: /users/{id}
