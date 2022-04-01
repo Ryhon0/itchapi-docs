@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Intro </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Intro ">
+    <meta name="generator" content="docfx 2.59.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="intro">Intro</h1>
+
+<p>There are multiple APIs for itch.io, depending on your use case, you might want to use one or multiple at the same time.  </p>
+<p>All the APIs are listed in the sidebar, some have their own quirks, to read about them, click on the API name.  </p>
+<p>All the JSON APIs have a quirk caused by the library that was used to serialize objects by the server. Where normally you&#39;d find an empty array <code>[ ]</code>, the library will return an empty object <code>{ }</code>.
+This quirk still exists for backwards compatibility reasons, it might not exist in newer versions of the API.<br>See <a href="https://github.com/itchio/itch.io/issues/1301">itch.io#1301</a> and <a href="https://github.com/itchio/go-itchio/commit/b3ae62491ac725a8377b5a75ccb1d5005a1e7545">go-itchio@b3ae624</a></p>
+<h2 id="glossary">Glossary</h2>
+<h3 id="endpoints">Endpoints</h3>
+<p>A base URL is the url that needs to be prepended to the method path, you can find it in the main page for the API you want to use, if not specified, use <code>https://itch.io</code>.<br>Parts of the URL in <code>{name}</code> format are URL parameters, they are replced with the value of the parameter, including the <code>{}</code>, e.g. <code>/games/{gameId}/</code> =&gt; <code>/games/5318008/</code>.<br>All other parameters are query parameters, following HTTP standards.<br>The HTTP method for requests is defined in the endpoint page header.  </p>
+<h3 id="types">Types</h3>
+<p>If a class extends another class, it has all the properties of the parent, plus ones defined bellow.<br>Arrays types have <code>[]</code> appended to the base type, e.g. <code>string[]</code> is an array of <code>string</code>.<br>Numeric types have their bitness appended to them, e.g. <code>int32</code> is a 32 bit integer.<br>DateTime represents a struct containing a date and time.  </p>
+<h2 id="base-response">Base response</h2>
+<p>Most APIs here will return the following JSON object on a non 2xx error code: </p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>errors</td>
+<td>string[]</td>
+<td>List of errors that have occured. If not set, no errors</td>
+</tr>
+<tr>
+<td>details</td>
+<td>string</td>
+<td>A more detailed error.</td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Ryhon0/itchapi-docs/blob/master/API/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            © 2022 Ryhon
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

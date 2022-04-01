@@ -1,0 +1,102 @@
+{
+  "API/index.html": {
+    "href": "API/index.html",
+    "title": "Intro",
+    "keywords": "Intro There are multiple APIs for itch.io, depending on your use case, you might want to use one or multiple at the same time. All the APIs are listed in the sidebar, some have their own quirks, to read about them, click on the API name. All the JSON APIs have a quirk caused by the library that was used to serialize objects by the server. Where normally you'd find an empty array [ ] , the library will return an empty object { } . This quirk still exists for backwards compatibility reasons, it might not exist in newer versions of the API. See itch.io#1301 and go-itchio@b3ae624 Glossary Endpoints A base URL is the url that needs to be prepended to the method path, you can find it in the main page for the API you want to use, if not specified, use https://itch.io . Parts of the URL in {name} format are URL parameters, they are replced with the value of the parameter, including the {} , e.g. /games/{gameId}/ => /games/5318008/ . All other parameters are query parameters, following HTTP standards. The HTTP method for requests is defined in the endpoint page header. Types If a class extends another class, it has all the properties of the parent, plus ones defined bellow. Arrays types have [] appended to the base type, e.g. string[] is an array of string . Numeric types have their bitness appended to them, e.g. int32 is a 32 bit integer. DateTime represents a struct containing a date and time. Base response Most APIs here will return the following JSON object on a non 2xx error code: Field Type Description errors string[] List of errors that have occured. If not set, no errors details string A more detailed error."
+  },
+  "API/notes.html": {
+    "href": "API/notes.html",
+    "title": "Notes",
+    "keywords": "Notes Your butt If you put the value of your itchio_token cookie through a base64 decoder, it will always contain the string UR BUTT"
+  },
+  "API/Other/index.html": {
+    "href": "API/Other/index.html",
+    "title": "Other APIs",
+    "keywords": "Other APIs These APIs can not be classified in any other groups."
+  },
+  "API/Other/tags.html": {
+    "href": "API/Other/tags.html",
+    "title": "GET /tags.json",
+    "keywords": "GET /tags.json This API is called on the \"Browse\" section of itch when you click the \"Select a tag...\" combo box. It retuns the list of tags you can use when browsing games. This API does not require any authentication. Parameters classification Required Must be one of the following values: all , game , assets , game_mod , physical_game , soundtrack , other , tool , comic , book . This parameter does not seem to have any effect when format is set to browse , the request always returns the same list of tags, behaves properly when format is unset. format Must be unset or set to the following value: browse . This API seems to return different values depending if format is set or unset, see bellow. Returns Field Type Description tags Tag [] An array of tags. Not present wthen browse is unset slugs string[] List of tags without the /tag- or /genre- prefixes. Only present when browse is not specified. Tag Type Field Type Description url string Part of an url, which should be appended to the feed URL, may start with /tag- or /genre- name string Human-readable name of the tag facets Facet Facet Type Field Type Description tag string Seems to be the url part of a Tag , minus /tag- or /genre-"
+  },
+  "API/RSS.html": {
+    "href": "API/RSS.html",
+    "title": "RSS API",
+    "keywords": "RSS API Official documentation: https://itch.io/updates/rss-feeds-for-browsing-games This API has an ugly brother, a Web API equivalent, please use this API instead This API lets you retrieve lists of popular and new games from itch. The URL for this feed can be retrieved by going to https://itch.io/games , selecting your desired filters and appending .xml to the URL, e.g. https://itch.io/games/top-sellers/free/platform-linux.xml . This method however is not recommended, because the website will not allow you to select some filters at the same time. You can paginate these feeds by using the page query parameter, e.g. https://itch.io/games/top-sellers/free/platform-linux.xml?page=2 will return the second page of results. The feed will always return 30 games per page, if it returns less or none, this means you've reached the end of this feed. If you wish to generate the URL programatically, you should order the filters in a specific order, as URLS with incorrectly ordered filters will redirect you to a URL with correct filters (), but any or all query parameters will be lost ( itch.io#1299 ) Returns Note: This is a XML document, the following is the contents of the <channel> element. Field Type Description title string The title of the feed link string The URL of the feed item Item A game, multiple entries. Item Field Type Description title string Title with additional information (sale, price, platforms) plainTitle string Title of the game with no additional information imageurl string URL to the game's cover price string Price of the game, in \"$0.00\" format, regardless of currency currency string Code for a currency, e.g. USD discountpercent int Discount percentage, e.g. 50 for 50%. If 0, the game is in a bundle fullPrice string Original of the game, in \"$0.00\" format, regardless of currency, only present if discounted saleends DateTime The time at which the sale ends link string URL to the game's page description string (CDATA) Short description of the game and HTML tag with the game cover in 2nd line pubDate DateTime The time at which the game was published createDate DateTime Same as pubDate updateDate DateTime Time the game was last updated platforms ... List of elements with the platform ID as the element name, the inner text is always \"yes\". The element name must be one of windows , osx , linux , html , android . There is no id for iOS. TODO: correct order of filters Type Value Description Price (only one of) free - store Paid games - on-sale - 5-dollars-or-less - 15-dollars-or-less Tags tag-*/genre-* Any order, see /tags.json"
+  },
+  "API/V1/index.html": {
+    "href": "API/V1/index.html",
+    "title": "JSON API Version 1",
+    "keywords": "JSON API Version 1 Partial documentation of this API is available here: https://itch.io/docs/api/serverside . More endpoints are documented in go-itchio before commit 6758acb and the itch app implementation before it used go-itchio This API has been superseded by the V2 API , however some endpoints don't have an equivalent in the V2 API or behave differently. This API's base URL is https://itch.io/api/1/{key}/me, where {key} is the API key, see bellow. Authentication The V1 API lets you authenticate using an API key or a JWT token. JWT tokens are scoped, API Keys don't have any restrictions. If using API keys, replace the {key} in the base URL with the API key or key and set the Authorization request header to Bearer {YOUR_API_KEY} . You can get an API key from here: https://itch.io/user/settings/api-keys . Or by calling /login . If using JWT Tokens, replace the {key} in the base URL with the API key or jwt and set the Authorization request header to Bearer {YOUR_JWT_TOKEN} . You can obtain a JWT token by calling /credentials/subkey or by using OAuth ."
+  },
+  "API/V2/Games/game.html": {
+    "href": "API/V2/Games/game.html",
+    "title": "GET /games/{id}",
+    "keywords": "GET /games/{id} Parameters {id} The ID of the game. Returns Field Type Description game Game The game Game type Field Type Description id int64 The game ID title string The game title url string URL for the game page short_text string The short description of the game created_at DateTime The time the game page was created published_at DateTime The time the game page has been made public user User The creator's profile min_price int64 The minimum price of the game, in cents. ( There is no way to tell what curreny ) sale Sale classification string The classification of this item, one of game, assets, game_mod, physical_game, soundtrack, other, tool, comic, book type string The game type, one of default, unity, flash traits string[] V2 only. V1 uses fields with bools instead. One of the following: can_be_bought, has_demo, in_press_system, p_android, p_linux, p_windows, p_osx Sale type Field Type Description id int64 The ID of the sale rate float64 The sale rate, in percent (10 for 10%, 100 for 100%). If equal to 0, the game is in a bundle end_date DateTime The time the sale ends at start_date DateTime The time the sale started at"
+  },
+  "API/V2/index.html": {
+    "href": "API/V2/index.html",
+    "title": "JSON API Version 2",
+    "keywords": "JSON API Version 2 The only documentation for this API is in the code of go-itchio . This is the current version of the API. The base URL is https://api.itch.io/ . If V3 ever releases, it will probably use the same base URL, to make sure you are using V2 anyways, set the Accept request header to application/vnd.itch.v2 ( go-itchio#4 ). Authentication The V2 API supports authentication using the itchio Cookie or using the Authorization header set to an API key. You can obtain your itchio cookie by logging in to itch using a web browser. You can obtain an API key from https://itch.io/user/settings/api-keys or by using the /login endpoint ."
+  },
+  "API/V2/login.html": {
+    "href": "API/V2/login.html",
+    "title": "POST /login",
+    "keywords": "POST /login Attempts to log in a user. No authentication required. Parameters username Username of user to log in. password Password of user to log in. recaptcha_response Recaptcha response from recaptcha_url force_recaptcha Boolean, if true, forces the user to complete the recaptcha. source The login source, one of desktop , android . Returns Field Type Description recaptcha_needed bool If true, you need to complete recaptcha to log in. recaptcha_url string URL to embed the captcha ( https://itch.io/captcha ). totp_needed bool If true, you need to complete 2FA to log in. ( /totp/verify ) token string The token needed for 2FA key APIKey The key used for authentication cookie string[string] List of cookies. Only contains the itchio cookie and doesn't seem to work for authenticating APIKey type Field Type Description id long API key id user_id long The logged in user's ID key string The API key, used for authentication created_at DateTime When the API key was created updated_at DateTime When the API key was last updated source_version string The server version"
+  },
+  "API/V2/Profile/collections.html": {
+    "href": "API/V2/Profile/collections.html",
+    "title": "GET /profile/collections",
+    "keywords": "GET /profile/collections Returns a list of your collections. Returns Field Type Description collections Collection [] Collection type Field Type Description id int64 The ID of the collection games_count int64 The amount of games in this collection updated_at DateTime The time this collection was last updated at created_at DateTime The time this collection was created at"
+  },
+  "API/V2/Profile/games.html": {
+    "href": "API/V2/Profile/games.html",
+    "title": "GET /profile/games",
+    "keywords": "GET /profile/games Returns a list of games you've created or are an admin of. Returns Field Type Description games MyGame MyGame type Extends Game Field Type Description published bool earnings Earning [] List of purchases purchases_count int64 The amount of times users have purchased this game views_count int64 The amount of times users have viewed this game downloads_count int64 The amount of times users have downloaded this game Earning type Field Type Description amount int64 The amount of money paid, in cents currency string Curency code for the currency, e.g. USD amount_formatted string The amount of money paid, formatted, e.g. $1.00"
+  },
+  "API/V2/Profile/owned-keys.html": {
+    "href": "API/V2/Profile/owned-keys.html",
+    "title": "GET /profile/owned-keys",
+    "keywords": "GET /profile/owned-keys Parameters page The page number to return. Returns Field Type Description page int64 The requested page number per_page int64 The number of keys per page (50 for V2, 500 for V1) owned_keys OwnedKey List of OwnedKey type Field Type Description id int64 The download key game_id int64 The game ID downloads int64 The amount of times you have downloaded this game game Game The game the key is for updated_at DateTime The time you've purchased this game or upgraded to higher tier created_at DateTime The time you've purchased this game"
+  },
+  "API/V2/Profile/profile.html": {
+    "href": "API/V2/Profile/profile.html",
+    "title": "GET /profile",
+    "keywords": "GET /profile Returns your profile information. Returns Field Type Description user User Your profile User type Field Type Description id int64 User ID username string display_name string Only present if display name is different from username url string URL to the user's profile cover_url string User avatar still_cover_url string Only present if cover_url is animated. URL to the first frame of the cover. press_user bool Whether the user is in the press system ( List of all press users ) developer bool Wether the user has published a game(?) gamer bool Always true"
+  },
+  "API/V2/Profile/session.html": {
+    "href": "API/V2/Profile/session.html",
+    "title": "POST /profile/game-sessions/{sessionID}",
+    "keywords": "POST /profile/game-sessions/{sessionID}"
+  },
+  "API/V2/Profile/sessions.html": {
+    "href": "API/V2/Profile/sessions.html",
+    "title": "GET /profile/game-sessions",
+    "keywords": "This endpoints has both GET and POST methods, each behaves differently. GET /profile/game-sessions Returns a list of last 50 game sessions for the current user. Returns Field Type Description user_game_sessions GameSession [] GameSession type extends SessionSummary Field Type Description id int64 The session ID platform string updated_at DateTime created_at DateTime architecture string game_id int64 build_id int64 crashed bool POST /profile/game-sessions Creates a new game session. Parameters Authentication parameters: download_key_id Download key for this game password Password for a restricted page secret Secret key for private page game_id The game ID to create a session for seconds_run Time the game has run for upload_id The upload ID being played build_id The build ID of the game, optional platform The platform the games is running on, one of linux , macos , windows . architecture The architecture the game is running on, one of 386 , amd64 . Returns Field Type Description summary SessionSummary user_game_session GameSession []"
+  },
+  "API/V2/Profile/session-summary.html": {
+    "href": "API/V2/Profile/session-summary.html",
+    "title": "GET /profile/game-sessions/summaries/{gameID}",
+    "keywords": "GET /profile/game-sessions/summaries/{gameID} Returns a session summary for a single game Returns Field Type Description summary SessionSummary SessionSummary type Field Type Description seconds_run int64 last_run_at DateTime"
+  },
+  "API/V2/Profile/subkey.html": {
+    "href": "API/V2/Profile/subkey.html",
+    "title": "GET /credentials/subkey",
+    "keywords": "GET /credentials/subkey"
+  },
+  "API/V2/totp.html": {
+    "href": "API/V2/totp.html",
+    "title": "POST /totp/verify",
+    "keywords": "POST /totp/verify Completes 2FA login. Parameters token The token from the login request. code The code from the 2FA app. Returns Field Type Description key APIKey The key used for authentication cookie string[string] List of cookies. Only contains the itchio cookie and doesn't seem to work for authenticating"
+  },
+  "API/Web/index.html": {
+    "href": "API/Web/index.html",
+    "title": "Web APIs",
+    "keywords": "Web APIs This is the wild west of APIs. They can change at any time without warning. These APIs are used by the itch.io website to display additional infromation, e.g. paginating feeds, game hover information."
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "itch.io API community documentation",
+    "keywords": "itch.io API community documentation This website is dedicated to documentating the itch.io API, as it doesn't have a full documentation yet. This is not an official documentation, everything is based on partial official documentation provided by itch and community findings. The API is not fully standardized yet and there isn't enough users to warrant a full documentation. Click here to go to the documentation Website GitHub repository"
+  }
+}

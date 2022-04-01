@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>RSS API </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="RSS API ">
+    <meta name="generator" content="docfx 2.59.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="rss-api">RSS API</h1>
+
+<p>Official documentation: <a href="https://itch.io/updates/rss-feeds-for-browsing-games">https://itch.io/updates/rss-feeds-for-browsing-games</a>  </p>
+<p>This API has an ugly brother, a Web API equivalent, please use this API instead  </p>
+<p>This API lets you retrieve lists of popular and new games from itch.<br>The URL for this feed can be retrieved by going to <a href="https://itch.io/games">https://itch.io/games</a>, selecting your desired filters and appending <code>.xml</code> to the URL, e.g. <a href="https://itch.io/games/top-sellers/free/platform-linux.xml">https://itch.io/games/top-sellers/free/platform-linux.xml</a>. This method however is not recommended, because the website will not allow you to select some filters at the same time.  </p>
+<p>You can paginate these feeds by using the <code>page</code> query parameter, e.g. <a href="https://itch.io/games/top-sellers/free/platform-linux.xml?page=2">https://itch.io/games/top-sellers/free/platform-linux.xml?page=2</a> will return the second page of results. The feed will always return 30 games per page, if it returns less or none, this means you&#39;ve reached the end of this feed.  </p>
+<p>If you wish to generate the URL programatically, you should order the filters in a specific order, as URLS with incorrectly ordered filters will redirect you to a URL with correct filters (), but any or all query parameters will be lost (<a href="https://github.com/itchio/itch.io/issues/1299">itch.io#1299</a>)  </p>
+<h2 id="returns">Returns</h2>
+<p>Note: This is a XML document, the following is the contents of the <code>&lt;channel&gt;</code> element.  </p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>The title of the feed</td>
+</tr>
+<tr>
+<td>link</td>
+<td>string</td>
+<td>The URL of the feed</td>
+</tr>
+<tr>
+<td>item</td>
+<td><a href="#item">Item</a></td>
+<td>A game, multiple entries.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="item">Item</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Title with additional information (sale, price, platforms)</td>
+</tr>
+<tr>
+<td>plainTitle</td>
+<td>string</td>
+<td>Title of the game with no additional information</td>
+</tr>
+<tr>
+<td>imageurl</td>
+<td>string</td>
+<td>URL to the game&#39;s cover</td>
+</tr>
+<tr>
+<td>price</td>
+<td>string</td>
+<td>Price of the game, in &quot;$0.00&quot; format, regardless of currency</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>string</td>
+<td>Code for a currency, e.g. USD</td>
+</tr>
+<tr>
+<td>discountpercent</td>
+<td>int</td>
+<td>Discount percentage, e.g. 50 for 50%. If 0, the game is in a bundle</td>
+</tr>
+<tr>
+<td>fullPrice</td>
+<td>string</td>
+<td>Original of the game, in &quot;$0.00&quot; format, regardless of currency, only present if discounted</td>
+</tr>
+<tr>
+<td>saleends</td>
+<td>DateTime</td>
+<td>The time at which the sale ends</td>
+</tr>
+<tr>
+<td>link</td>
+<td>string</td>
+<td>URL to the game&#39;s page</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>(CDATA) Short description of the game and <img> HTML tag with the game cover in 2nd line</td>
+</tr>
+<tr>
+<td>pubDate</td>
+<td>DateTime</td>
+<td>The time at which the game was published</td>
+</tr>
+<tr>
+<td>createDate</td>
+<td>DateTime</td>
+<td>Same as pubDate</td>
+</tr>
+<tr>
+<td>updateDate</td>
+<td>DateTime</td>
+<td>Time the game was last updated</td>
+</tr>
+<tr>
+<td>platforms</td>
+<td>...</td>
+<td>List of elements with the platform ID as the element name, the inner text is always &quot;yes&quot;. The element name must be one of <code>windows</code>, <code>osx</code>, <code>linux</code>, <code>html</code>, <code>android</code>. There is no id for iOS.</td>
+</tr>
+</tbody>
+</table>
+<p>TODO: correct order of filters  </p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Price (only one of)</td>
+<td>free</td>
+<td></td>
+</tr>
+<tr>
+<td> -</td>
+<td>store</td>
+<td>Paid games</td>
+</tr>
+<tr>
+<td> -</td>
+<td>on-sale</td>
+<td></td>
+</tr>
+<tr>
+<td> -</td>
+<td>5-dollars-or-less</td>
+<td></td>
+</tr>
+<tr>
+<td> -</td>
+<td>15-dollars-or-less</td>
+<td></td>
+</tr>
+<tr>
+<td>Tags</td>
+<td>tag-*/genre-*</td>
+<td>Any order, see <a href="/API/Other/tags.html">/tags.json</a></td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Ryhon0/itchapi-docs/blob/master/API/RSS.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            © 2022 Ryhon
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

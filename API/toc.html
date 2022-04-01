@@ -1,0 +1,271 @@
+﻿
+<div id="sidetoggle">
+  <div>
+    <div class="sidefilter">
+      <form class="toc-filter">
+        <span class="glyphicon glyphicon-filter filter-icon"></span>
+        <span class="glyphicon glyphicon-remove clear-icon" id="toc_filter_clear"></span>
+        <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+      </form>
+    </div>
+    <div class="sidetoc">
+      <div class="toc" id="toc">
+          
+          <ul class="nav level1">
+                <li>
+                    <a href="index.html" name="" title="Intro">Intro</a>
+                </li>
+                <li>
+                    <span class="expand-stub"></span>
+                    <a href="V2/index.html" name="" title="JSON API V2">JSON API V2</a>
+                    
+                    <ul class="nav level2">
+                          <li>
+                              <span class="expand-stub"></span>
+                              <a>Profile</a>
+                              
+                              <ul class="nav level3">
+                                    <li>
+                                        <a href="V2/Profile/profile.html" name="" title="/profile">/profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="V2/Profile/games.html" name="" title="/profile/games">/profile/games</a>
+                                    </li>
+                                    <li>
+                                        <a href="V2/Profile/owned-keys.html" name="" title="/profile/owned-keys">/profile/owned-keys</a>
+                                    </li>
+                                    <li>
+                                        <a href="V2/Profile/collections.html" name="" title="/profile/collections">/profile/collections</a>
+                                    </li>
+                                    <li>
+                                        <a href="V2/Profile/sessions.html" name="" title="/profile/game-sessions">/profile/game-sessions</a>
+                                    </li>
+                                    <li>
+                                        <a href="V2/Profile/session.html" name="" title="/profile/game-sessions/{sessionID}">/profile/game-sessions/{sessionID}</a>
+                                    </li>
+                                    <li>
+                                        <a href="V2/Profile/session.html" name="" title="/profile/game-sessions/{gameID}">/profile/game-sessions/{gameID}</a>
+                                    </li>
+                                    <li>
+                                        <a href="V2/Profile/session-summary.html" name="" title="/profile/game-sessions/summaries/{gameID}">/profile/game-sessions/summaries/{gameID}</a>
+                                    </li>
+                                    <li>
+                                        <a>/games/{gameID}/interactions/sessions</a>
+                                    </li>
+                                    <li>
+                                        <a>/games/{gameID}/interactions/sessions/{sessionID}</a>
+                                    </li>
+                                    <li>
+                                        <a href="V2/Profile/subkey.html" name="" title="/credentials/subkey">/credentials/subkey</a>
+                                    </li>
+                              </ul>
+                          </li>
+                          <li>
+                              <span class="expand-stub"></span>
+                              <a>Collections</a>
+                              
+                              <ul class="nav level3">
+                                    <li>
+                                        <a>/collections/{id}</a>
+                                    </li>
+                                    <li>
+                                        <a>/collections/{id}/collection-games</a>
+                                    </li>
+                              </ul>
+                          </li>
+                          <li>
+                              <span class="expand-stub"></span>
+                              <a>Games</a>
+                              
+                              <ul class="nav level3">
+                                    <li>
+                                        <a href="V2/Games/game.html" name="" title="/games/{id}">/games/{id}</a>
+                                    </li>
+                                    <li>
+                                        <a>/games/{gameID}/download-sessions</a>
+                                    </li>
+                                    <li>
+                                        <a>/games/{gameID}/uploads</a>
+                                    </li>
+                              </ul>
+                          </li>
+                          <li>
+                              <span class="expand-stub"></span>
+                              <a>Downloads</a>
+                              
+                              <ul class="nav level3">
+                                    <li>
+                                        <a>/uploads/{id}</a>
+                                    </li>
+                                    <li>
+                                        <a>/uploads/{id}/builds</a>
+                                    </li>
+                                    <li>
+                                        <a>/uploads/{id}/download</a>
+                                    </li>
+                                    <li>
+                                        <a>/uploads/{id}/scanned-archive</a>
+                                    </li>
+                                    <li>
+                                        <a>/builds/{id}</a>
+                                    </li>
+                                    <li>
+                                        <a>/builds/{id}/scanned-archive</a>
+                                    </li>
+                                    <li>
+                                        <a>/builds/{id}/download/{type}/{subType}</a>
+                                    </li>
+                                    <li>
+                                        <a>/builds/{current}/upgrade-paths/{target}</a>
+                                    </li>
+                              </ul>
+                          </li>
+                          <li>
+                              <span class="expand-stub"></span>
+                              <a>Wharf</a>
+                              
+                              <ul class="nav level3">
+                                    <li>
+                                        <a>/wharf/status</a>
+                                    </li>
+                                    <li>
+                                        <a>/wharf/channels</a>
+                                    </li>
+                                    <li>
+                                        <a>/wharf/channels/{channel}</a>
+                                    </li>
+                                    <li>
+                                        <a>/wharf/builds</a>
+                                    </li>
+                                    <li>
+                                        <a>/wharf/builds/{buildID}/files</a>
+                                    </li>
+                                    <li>
+                                        <a>/wharf/builds/{buildID}/files</a>
+                                    </li>
+                                    <li>
+                                        <a>/wharf/builds/{buildID}/files/{fileID}</a>
+                                    </li>
+                                    <li>
+                                        <a>/wharf/builds/{buildID}/files/{fileID}/download</a>
+                                    </li>
+                                    <li>
+                                        <a>/wharf/builds/{buildID}/events</a>
+                                    </li>
+                                    <li>
+                                        <a>/wharf/builds/{buildID}/failures</a>
+                                    </li>
+                                    <li>
+                                        <a>/wharf/builds/{buildID}/failures/rediff</a>
+                                    </li>
+                                    <li>
+                                        <a>/wharf/builds/{buildID}/events</a>
+                                    </li>
+                              </ul>
+                          </li>
+                          <li>
+                              <a href="V2/login.html" name="" title="/login">/login</a>
+                          </li>
+                          <li>
+                              <a href="V2/totp.html" name="" title="/totp/verify">/totp/verify</a>
+                          </li>
+                          <li>
+                              <a>/search/games</a>
+                          </li>
+                          <li>
+                              <a>/search/users</a>
+                          </li>
+                          <li>
+                              <a>/users/{id}</a>
+                          </li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="expand-stub"></span>
+                    <a href="V1/index.html" name="" title="JSON API V1">JSON API V1</a>
+                    
+                    <ul class="nav level2">
+                          <li>
+                              <a>/credentials/info</a>
+                          </li>
+                          <li>
+                              <a>/me</a>
+                          </li>
+                          <li>
+                              <a>/my-owned-keys</a>
+                          </li>
+                          <li>
+                              <a>/download-key/{key}/uploads</a>
+                          </li>
+                          <li>
+                              <a>/my-collections</a>
+                          </li>
+                          <li>
+                              <a>/my-games</a>
+                          </li>
+                          <li>
+                              <a>/my-games/graphs</a>
+                          </li>
+                          <li>
+                              <a>/game/{id}</a>
+                          </li>
+                          <li>
+                              <a>/game/{id}/purchases</a>
+                          </li>
+                          <li>
+                              <a>/game/{id}/download_keys</a>
+                          </li>
+                          <li>
+                              <a>/game/{id}/uploads</a>
+                          </li>
+                          <li>
+                              <a>/upload/{id}/download</a>
+                          </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="https://itch.io/docs/api/oauth" name="" title="OAuth">OAuth</a>
+                </li>
+                <li>
+                    <a href="RSS.html" name="" title="RSS API">RSS API</a>
+                </li>
+                <li>
+                    <span class="expand-stub"></span>
+                    <a href="Web/index.html" name="" title="Web API">Web API</a>
+                    
+                    <ul class="nav level2">
+                          <li>
+                              <a>/game/popup/{id}</a>
+                          </li>
+                          <li>
+                              <a>/devlogs</a>
+                          </li>
+                          <li>
+                              <a>/my-feed</a>
+                          </li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="expand-stub"></span>
+                    <a href="Other/index.html" name="" title="Other">Other</a>
+                    
+                    <ul class="nav level2">
+                          <li>
+                              <a href="Other/tags.html" name="" title="/tags.json">/tags.json</a>
+                          </li>
+                          <li>
+                              <a>/jam/{id}/results.json</a>
+                          </li>
+                          <li>
+                              <a>/jam/{id}/entries.json</a>
+                          </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="notes.html" name="" title="Notes">Notes</a>
+                </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>

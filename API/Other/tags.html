@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>GET /tags.json </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="GET /tags.json ">
+    <meta name="generator" content="docfx 2.59.1.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="get-tagsjson">GET /tags.json</h1>
+
+<p>This API is called on the &quot;Browse&quot; section of itch when you click the &quot;Select a tag...&quot; combo box. It retuns the list of tags you can use when browsing games. This API does not require any authentication.<br><img src="/images/tags.png" alt=""></p>
+<h2 id="parameters">Parameters</h2>
+<h3 id="classification">classification</h3>
+<p><strong>Required</strong><br>Must be one of the following values: <code>all</code>, <code>game</code>, <code>assets</code>, <code>game_mod</code>, <code>physical_game</code>, <code>soundtrack</code>, <code>other</code>, <code>tool</code>, <code>comic</code>, <code>book</code>.<br>This parameter does not seem to have any effect when <code>format</code> is set to <code>browse</code>, the request always returns the same list of tags, behaves properly when <code>format</code> is unset.  </p>
+<h3 id="format">format</h3>
+<p>Must be unset or set to the following value: <code>browse</code>.<br>This API seems to return different values depending if <code>format</code> is set or unset, see bellow.  </p>
+<h2 id="returns">Returns</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tags</td>
+<td><a href="#tag-type">Tag</a>[]</td>
+<td>An array of tags. Not present wthen <code>browse</code> is unset</td>
+</tr>
+<tr>
+<td>slugs</td>
+<td>string[]</td>
+<td>List of tags without the <code>/tag-</code> or <code>/genre-</code> prefixes. Only present when <code>browse</code> is not specified.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tag-type">Tag Type</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>Part of an url, which should be appended to the feed URL, may start with <code>/tag-</code> or <code>/genre-</code></td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Human-readable name of the tag</td>
+</tr>
+<tr>
+<td>facets</td>
+<td><a href="#facet-type">Facet</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="facet-type">Facet Type</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tag</td>
+<td>string</td>
+<td>Seems to be the <code>url</code> part of a <a href="#tag-type">Tag</a>, minus <code>/tag-</code> or <code>/genre-</code></td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Ryhon0/itchapi-docs/blob/master/API/Other/tags.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            © 2022 Ryhon
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

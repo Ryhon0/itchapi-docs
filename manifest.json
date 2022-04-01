@@ -1,0 +1,341 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/a/itchapi-docs/itchapi-docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "API/Other/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "API/Other/index.html",
+          "hash": "qHjJtd8iAjlGGdGTlxu4+bKU5OGolxbiNeDOCrrb7uQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "API/Other/tags.md",
+      "output": {
+        ".html": {
+          "relative_path": "API/Other/tags.html",
+          "hash": "PcJZqWhhqZYIpsV7gHDNOSlMnQc1Ta46K9HcZ0cT3DU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "API/RSS.md",
+      "output": {
+        ".html": {
+          "relative_path": "API/RSS.html",
+          "hash": "sQUedRwLEduGNNUKo/46TH2V5NKnOKwoI269BdeeZ80="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "API/V1/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "API/V1/index.html",
+          "hash": "14Jl3akVotTOO07rne+xL1hemlv2EcK+w94dQPXdK0A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "API/V2/Games/game.md",
+      "output": {
+        ".html": {
+          "relative_path": "API/V2/Games/game.html",
+          "hash": "sLrQJWyteMH1fcKQGH61Rr5M0tohpjslkQLc+XIBJCU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "API/V2/Profile/collections.md",
+      "output": {
+        ".html": {
+          "relative_path": "API/V2/Profile/collections.html",
+          "hash": "emIg1BHVJ+sXwpi8ND6eeW1SG5/3PutaCwQ7rtTvPxQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "API/V2/Profile/games.md",
+      "output": {
+        ".html": {
+          "relative_path": "API/V2/Profile/games.html",
+          "hash": "ZonnISb9Mybm0JlPbpQXTxNF2/8jPyClobD7ljN2lyE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "API/V2/Profile/owned-keys.md",
+      "output": {
+        ".html": {
+          "relative_path": "API/V2/Profile/owned-keys.html",
+          "hash": "e2EPsegX/Q4LCDZJ5OkuNHvV9M9p/Y/hsZuOqsQ1jGY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "API/V2/Profile/profile.md",
+      "output": {
+        ".html": {
+          "relative_path": "API/V2/Profile/profile.html",
+          "hash": "ZceDYkT5giEwwtOujcLqq+Odo5XsYJbEJh0BVGXhbiA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "API/V2/Profile/session-summary.md",
+      "output": {
+        ".html": {
+          "relative_path": "API/V2/Profile/session-summary.html",
+          "hash": "DX8037+3p5opW1O5a1zmMIhekTizTpvjiZKKX0W6XDs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "API/V2/Profile/session.md",
+      "output": {
+        ".html": {
+          "relative_path": "API/V2/Profile/session.html",
+          "hash": "HyhTxtiHmHvpxhLv3kV1m96caflZVKDAkwzvk0+9ckc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "API/V2/Profile/sessions.md",
+      "output": {
+        ".html": {
+          "relative_path": "API/V2/Profile/sessions.html",
+          "hash": "LiqvkPAMx4TOv58aE2hVdl9x/ygPayKMKKrpX2tG7tM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "API/V2/Profile/subkey.md",
+      "output": {
+        ".html": {
+          "relative_path": "API/V2/Profile/subkey.html",
+          "hash": "wS6N7AWFFfkny8ofDAYXAjs7XgNlx5+WnBQc1nzQjAE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "API/V2/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "API/V2/index.html",
+          "hash": "IUc/u8/Bac7BLR1DomwLRZ12TfGKmM/D4X/OLEqTQLM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "API/V2/login.md",
+      "output": {
+        ".html": {
+          "relative_path": "API/V2/login.html",
+          "hash": "+VgD8Ld/jfCP0xCEV1Fj7BMABSWlJu1fwga0qhlsppc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "API/V2/totp.md",
+      "output": {
+        ".html": {
+          "relative_path": "API/V2/totp.html",
+          "hash": "F/YO54zTpRQ3aqLW/FVPeudmri6bgJ2ZNUz4DzaMEH8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "API/Web/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "API/Web/index.html",
+          "hash": "VDoJDZM1sUgA1XQ0bwT3ylnbL7QUXbiuzDraYfsXTvM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "API/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "API/index.html",
+          "hash": "24XWv3tD+rerQJrwdoEWLtq7z/Lb/V7C0tLodCa6PHk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "API/notes.md",
+      "output": {
+        ".html": {
+          "relative_path": "API/notes.html",
+          "hash": "dWle2gzIxYIf8ReYV/Ne55/roA5Tbg2ZSMkKQjoKd3g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "API/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "API/toc.html",
+          "hash": "IS2lgiyP0T/V+Sa4hyR+4oJXAiSG7wSp9NmnZ4DGDy0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/tags.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/tags.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "WG7Up+vQzA5AQDHMskq4ueUGdKnsYBnNRlgDBxzNr/M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "eqPSfH165FSUF7MrEyeyRHMBSSNmqw6d22xcOKk0cI8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 20,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
