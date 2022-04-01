@@ -10,6 +10,8 @@ Password of user to log in.
 Recaptcha response from `recaptcha_url`
 ### force_recaptcha
 Boolean, if true, forces the user to complete the recaptcha.
+### source
+The login source, one of `desktop`, `android`.
 
 ## Returns
 | Field | Type | Description |
